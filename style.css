@@ -1,0 +1,1000 @@
+/* =========================
+   BASIC
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+
+    --background: #f4f5ef;
+
+    --card: #ffffff;
+
+    --text: #172017;
+
+    --muted: #707970;
+
+    --green: #2f6b45;
+
+    --green-light: #dcebd5;
+
+    --border: #dfe5dc;
+
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 7%;
+
+    border-bottom:
+        1px solid var(--border);
+
+    background:
+        rgba(255,255,255,0.8);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+.logo {
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+}
+
+
+#darkModeBtn {
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    padding: 9px 13px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding:
+        90px 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.4fr 0.6fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+
+.tag {
+
+    color: var(--green);
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.hero h1 {
+
+    font-size:
+        clamp(50px, 7vw, 90px);
+
+    line-height: 0.95;
+
+    margin-top: 20px;
+
+    letter-spacing: -4px;
+
+}
+
+
+.hero h1 span {
+
+    color: var(--green);
+
+}
+
+
+.hero-text > p {
+
+    color: var(--muted);
+
+    max-width: 650px;
+
+    font-size: 18px;
+
+    margin:
+        25px 0;
+
+}
+
+
+.buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+
+    font-family: inherit;
+
+}
+
+
+.primary {
+
+    border: none;
+
+    background: var(--green);
+
+    color: white;
+
+    padding:
+        14px 22px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.primary:hover {
+
+    opacity: 0.88;
+
+}
+
+
+.secondary {
+
+    border:
+        1px solid var(--border);
+
+    background: white;
+
+    padding:
+        14px 22px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.secondary:hover {
+
+    border-color:
+        var(--green);
+
+}
+
+
+.location-status {
+
+    font-size: 13px !important;
+
+    margin-top: 12px !important;
+
+}
+
+
+/* =========================
+   HERO CARD
+========================= */
+
+.hero-card {
+
+    background: var(--green-light);
+
+    border-radius: 25px;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+}
+
+
+.tree {
+
+    font-size: 90px;
+
+}
+
+
+.hero-card h3 {
+
+    margin-top: 15px;
+
+}
+
+
+.score {
+
+    font-size: 55px;
+
+    font-weight: bold;
+
+    color: var(--green);
+
+}
+
+
+.hero-card p {
+
+    color: var(--muted);
+
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+
+    max-width: 1100px;
+
+    margin: 25px auto;
+
+    padding:
+        30px;
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 22px;
+
+}
+
+
+.section-title span {
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: var(--green);
+
+}
+
+
+.section-title h2 {
+
+    font-size: 30px;
+
+    margin-top: 5px;
+
+}
+
+
+/* =========================
+   TIMER
+========================= */
+
+.timer {
+
+    text-align: right;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: var(--green);
+
+}
+
+
+/* =========================
+   CHALLENGES
+========================= */
+
+.challenge-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 25px;
+
+}
+
+
+.challenge {
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.challenge:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+.challenge.completed {
+
+    background: var(--green-light);
+
+    border-color: var(--green);
+
+}
+
+
+.challenge-icon {
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.challenge h3 {
+
+    font-size: 16px;
+
+}
+
+
+.challenge p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-top: 5px;
+
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-container {
+
+    margin-top: 25px;
+
+}
+
+
+.progress-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+}
+
+
+.progress {
+
+    height: 9px;
+
+    background: #e9ede7;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+#progressBar {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: var(--green);
+
+    transition: 0.4s;
+
+}
+
+
+/* =========================
+   AI SECTION
+========================= */
+
+.ai-container {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    margin-top: 25px;
+
+}
+
+
+/* =========================
+   UPLOAD
+========================= */
+
+.upload-area {
+
+    width: 100%;
+
+}
+
+
+.upload-box {
+
+    min-height: 280px;
+
+    border:
+        2px dashed #bcc7b9;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    background: #fafcf8;
+
+}
+
+
+.upload-box:hover {
+
+    border-color: var(--green);
+
+}
+
+
+.upload-box input {
+
+    display: none;
+
+}
+
+
+.camera {
+
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.upload-box p {
+
+    color: var(--muted);
+
+    margin-top: 5px;
+
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.preview {
+
+    width: 100%;
+
+    max-height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    margin-top: 15px;
+
+}
+
+
+.analyze {
+
+    width: 100%;
+
+    margin-top: 12px;
+
+}
+
+
+.loading {
+
+    padding: 15px;
+
+    text-align: center;
+
+    color: var(--green);
+
+    font-weight: bold;
+
+}
+
+
+/* =========================
+   AI RESULT
+========================= */
+
+.result-card {
+
+    border-radius: 18px;
+
+    background: #f4f7f1;
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.ai-icon {
+
+    font-size: 45px;
+
+}
+
+
+.result-card > p:first-of-type {
+
+    color: var(--green);
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-top: 15px;
+
+}
+
+
+#resultName {
+
+    font-size: 30px;
+
+    margin-top: 8px;
+
+}
+
+
+.confidence {
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: var(--green);
+
+    font-weight: bold;
+
+}
+
+
+#resultDescription {
+
+    color: var(--muted);
+
+    margin-top: 15px;
+
+}
+
+
+/* =========================
+   PRIVACY
+========================= */
+
+.privacy {
+
+    margin-top: 18px;
+
+    font-size: 12px;
+
+    color: var(--muted);
+
+}
+
+
+/* =========================
+   DISCOVERIES
+========================= */
+
+.discoveries {
+
+    margin-top: 20px;
+
+}
+
+
+.empty {
+
+    text-align: center;
+
+    padding: 50px;
+
+    color: var(--muted);
+
+}
+
+
+.empty:first-letter {
+
+    font-size: 40px;
+
+}
+
+
+.discovery {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 16px 0;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.discovery:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.discovery-name {
+
+    font-weight: bold;
+
+}
+
+
+.discovery-date {
+
+    font-size: 12px;
+
+    color: var(--muted);
+
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 15px;
+
+    margin-top: 25px;
+
+}
+
+
+.stat {
+
+    padding: 25px;
+
+    background: #f5f7f3;
+
+    border-radius: 15px;
+
+}
+
+
+.stat strong {
+
+    display: block;
+
+    font-size: 30px;
+
+    color: var(--green);
+
+}
+
+
+.stat span {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+}
+
+
+/* =========================
+   WHY AI
+========================= */
+
+.why-ai {
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: #f5f7f3;
+
+}
+
+
+.why-ai h3 {
+
+    margin-bottom: 8px;
+
+}
+
+
+.why-ai p {
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding:
+        30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark {
+
+    --background: #101510;
+
+    --card: #171d17;
+
+    --text: #edf4eb;
+
+    --muted: #a0aaa0;
+
+    --border: #2d382e;
+
+}
+
+
+body.dark nav {
+
+    background: #101510;
+
+}
+
+
+body.dark #darkModeBtn,
+body.dark .secondary {
+
+    background: #171d17;
+
+    color: white;
+
+}
+
+
+body.dark .upload-box,
+body.dark .result-card,
+body.dark .stat,
+body.dark .why-ai {
+
+    background: #1d261d;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 800px) {
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        padding-top: 50px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 55px;
+
+    }
+
+
+    .ai-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .challenge-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .stats {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+}

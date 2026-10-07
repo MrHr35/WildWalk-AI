@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>WildWalk AI</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        🌿 WildWalk AI
+    </div>
+
+    <button id="darkModeBtn">
+        🌙
+    </button>
+
+</nav>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <span class="tag">
+            TOUCH GRASS • AI PROJECT
+        </span>
+
+        <h1>
+            Go outside.<br>
+            <span>Discover more.</span>
+        </h1>
+
+        <p>
+
+            WildWalk AI uses browser-based artificial
+            intelligence to help you identify things
+            you discover outdoors.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <button
+                class="primary"
+                id="startWalkBtn">
+
+                Start Walk
+
+            </button>
+
+
+            <button
+                class="secondary"
+                id="locationBtn">
+
+                📍 Enable Location
+
+            </button>
+
+        </div>
+
+
+        <p
+            id="locationStatus"
+            class="location-status">
+
+            Location not enabled.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="hero-card">
+
+        <div class="tree">
+            🌳
+        </div>
+
+        <h3>
+            Your Outdoor Score
+        </h3>
+
+        <div class="score"
+             id="totalPoints">
+
+            0
+
+        </div>
+
+        <p>
+            points earned
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= WALK ================= -->
+
+<section
+    id="walkSection"
+    class="section hidden">
+
+    <div class="section-title">
+
+        <span>
+            TODAY'S WALK
+        </span>
+
+        <h2>
+            Outdoor Challenge
+        </h2>
+
+    </div>
+
+
+    <div class="timer"
+         id="timer">
+
+        00:00
+
+    </div>
+
+
+    <div
+        id="challenges"
+        class="challenge-container">
+
+    </div>
+
+
+    <div class="progress-container">
+
+        <div class="progress-info">
+
+            <span>
+                Progress
+            </span>
+
+            <span id="progressText">
+                0%
+            </span>
+
+        </div>
+
+
+        <div class="progress">
+
+            <div
+                id="progressBar">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= AI SECTION ================= -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span>
+            AI FIELD GUIDE
+        </span>
+
+        <h2>
+            What did you find?
+        </h2>
+
+    </div>
+
+
+    <div class="ai-container">
+
+
+        <!-- LEFT -->
+
+        <div class="upload-area">
+
+            <label
+                for="imageInput"
+                class="upload-box">
+
+                <div class="camera">
+                    📷
+                </div>
+
+                <h3>
+                    Take a picture
+                </h3>
+
+                <p>
+                    Upload a photo and let
+                    AI analyze it.
+                </p>
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                    capture="environment">
+
+            </label>
+
+
+            <img
+                id="preview"
+                class="preview hidden"
+                alt="Selected image">
+
+
+            <button
+                id="analyzeBtn"
+                class="primary analyze hidden">
+
+                🤖 Analyze with AI
+
+            </button>
+
+
+            <div
+                id="loading"
+                class="loading hidden">
+
+                AI is analyzing your image...
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT -->
+
+        <div class="result-card">
+
+            <div class="ai-icon">
+                🤖
+            </div>
+
+            <p>
+                AI RESULT
+            </p>
+
+            <h2
+                id="resultName">
+
+                Waiting for photo...
+
+            </h2>
+
+            <div
+                id="confidence"
+                class="confidence">
+
+                --
+
+            </div>
+
+            <p id="resultDescription">
+
+                Upload an image to let the
+                AI identify what is in it.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="privacy">
+
+        🔒 <b>Privacy:</b>
+        The image is processed in your browser.
+        There is no WildWalk backend.
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= DISCOVERIES ================= -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <span>
+            YOUR JOURNEY
+        </span>
+
+        <h2>
+            Discoveries
+        </h2>
+
+    </div>
+
+
+    <div
+        id="discoveries"
+        class="discoveries">
+
+        <div class="empty">
+
+            🌱
+
+            <p>
+                Your discoveries will appear here.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SUMMARY ================= -->
+
+<section class="section summary">
+
+    <div class="section-title">
+
+        <span>
+            WALK REPORT
+        </span>
+
+        <h2>
+            Your Outdoor Stats
+        </h2>
+
+    </div>
+
+
+    <div class="stats">
+
+        <div class="stat">
+
+            <strong id="walkTime">
+                0m
+            </strong>
+
+            <span>
+                Outside
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong id="discoveryCount">
+                0
+            </strong>
+
+            <span>
+                Discoveries
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong id="points">
+                0
+            </strong>
+
+            <span>
+                Points
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong id="gpsStatus">
+                —
+            </strong>
+
+            <span>
+                GPS
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="why-ai">
+
+        <h3>
+            Why open AI?
+        </h3>
+
+        <p>
+
+            WildWalk AI uses an open-source
+            browser AI model instead of sending
+            your photos to a private AI server.
+
+            This means the project can eventually
+            be customized for local birds, plants
+            and wildlife without depending on
+            a closed AI API.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        🌿 WildWalk AI
+    </p>
+
+    <p>
+        Built with HTML • CSS • JavaScript • AI
+    </p>
+
+</footer>
+
+
+
+<!-- ================= AI LIBRARIES ================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js">
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.1">
+</script>
+
+
+
+<!-- ================= OUR JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
